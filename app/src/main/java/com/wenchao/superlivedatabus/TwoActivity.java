@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.wenchao.livedatabus.LiveDataBus;
+
 /**
  * @author wenchao
  * @date 2019/8/1.

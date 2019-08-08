@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.1"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation 'android.arch.lifecycle:livedata:1.1.1'
+}
+
+task makeJar(type: Copy) {
+    delete 'build/libs/LiveDataBus.jar'
+    from('build/intermediates/packaged-classes/release/')
+    into('build/libs/')
+    include('classes.jar')
+    rename('classes.jar', 'LiveDataBus.jar')
+}
+makeJar.dependsOn(build)

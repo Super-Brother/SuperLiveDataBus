@@ -1,4 +1,4 @@
-package com.wenchao.superlivedatabus;
+package com.wenchao.livedatabus;
 
 import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.LiveData;
